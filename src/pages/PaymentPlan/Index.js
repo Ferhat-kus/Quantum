@@ -55,11 +55,8 @@ export default class Index extends Component {
                             </View>
                             <Text style={styles.TermsofUsePrivacyPolicy}>Kullanım Şartları / Gizlilik Politikası</Text>
                         </ScrollView>
-
                     </View>
-
                 </View>
-
             </ImageBackground>
         )
     }

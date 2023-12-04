@@ -1,7 +1,6 @@
 import { Text, StyleSheet, View, ImageBackground, TouchableOpacity, Image } from 'react-native'
 import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Index'
-import GoBack from '../../components/GoBack/Index';
 import AnalysisBubble from './components/AnalysisBubble'
 import HarmonyBar from './components/HarmonyBar/HarmonyBar';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';

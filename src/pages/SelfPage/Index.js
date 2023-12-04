@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, ImageBackground, Dimensions } from 'react-native';
+import { Text, StyleSheet, View, ImageBackground } from 'react-native';
 import Navbar from '../../components/Navbar/Index';
 import Flatlist from '../../components/Flatlist/Flatlist';
-import Button from '../SelfPage/components/Button';
 import Carousel from './components/Carousel/App'
 
-
-const windowWidth = Dimensions.get('window').width;
-
 export default class Index extends Component {
-    scrollToIndex = (index) => {
-        const offset = index * windowWidth;
-        this.scrollView.scrollTo({ x: offset, animated: true });
-    };
-
+   
     render() {
         const { navigation } = this.props;
         console.log('NAVİGATİON', navigation)

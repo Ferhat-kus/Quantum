@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 export default class AnalysisResult extends Component {
   render() {
-    const { Title , Description ,Description2} = this.props;
+    const { Title , Description} = this.props;
     return (
       <View style={styles.Container}>
         <View style={styles.AnalysisResult}>

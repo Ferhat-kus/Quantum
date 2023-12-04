@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Index'
 import Dropdown from '../SelfConcordance/components/Dropdown'
 import Button from '../SelfConcordance/components/Button'
-import GoBack from '../../components/GoBack/Index';
 
 export default class Index extends Component {
   render() {
@@ -11,7 +10,6 @@ export default class Index extends Component {
     return (
       <ImageBackground style={styles.Container} source={require('../../assets/background.png')}>
         <Navbar />
-        {/* <GoBack Title='Menü'onPress={() => navigation.goBack()}/> */}
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.Goback}>
           <Image source={require('../../assets/Goback.png')} />
           <Text style={styles.GobackText}>Menü</Text>

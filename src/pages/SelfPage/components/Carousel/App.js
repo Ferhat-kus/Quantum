@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Text,View, Image, StatusBar, FlatList, Animated, TouchableOpacity } from "react-native";
+import { View, Image, StatusBar, FlatList, Animated, TouchableOpacity } from "react-native";
 import { Images } from "./Constants";
 import styles, { ITEM_SIZE } from "./Styles";
 
@@ -36,7 +36,6 @@ export default function App({onPress}) {
               <TouchableOpacity onPress={onPress} style={styles.movieInner}>
                 <Image source={item} style={styles.posterImage} />
               </TouchableOpacity>
-              {/* <Image source={require('./src/assets/kisiliktipleri.png')} style={styles.posterImage} /> */}
             </View>
           );
         }}
