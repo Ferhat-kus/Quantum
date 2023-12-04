@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, View, ImageBackground } from 'react-native';
 import Navbar from '../../components/Navbar/Index';
 import Flatlist from '../../components/Flatlist/Flatlist';
-import Carousel from './components/Carousel/App'
+import Carousel from './components/Carousel/Carousel'
 
 export default class Index extends Component {
    
