@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, ImageBackground, ScrollView, Dimensions, Modal, Image, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, View, ImageBackground, Dimensions } from 'react-native';
 import Navbar from '../../components/Navbar/Index';
 import Flatlist from '../../components/Flatlist/Flatlist';
 import Button from '../SelfPage/components/Button';
