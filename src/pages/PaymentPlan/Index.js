@@ -50,8 +50,8 @@ export default class Index extends Component {
                             </View>
                             <View style={{ width: '100%', height: 1, opacity: 0.5, backgroundColor: 'white', }} />
                             <Text style={styles.PaymentText}>Paket yenilenme tarihinden en az 24 saat önce iptal et. Uygulamada, Profil - Abonelikler’e git.</Text>
-                            <View style={{alignItems: 'center',paddingVertical:10,}}>
-                                <Button Title='İleri' onPress={() => navigation.goBack()}/>
+                            <View style={{ alignItems: 'center', paddingVertical: 10, }}>
+                                <Button Title='İleri' onPress={() => navigation.goBack()} />
                             </View>
                             <Text style={styles.TermsofUsePrivacyPolicy}>Kullanım Şartları / Gizlilik Politikası</Text>
                         </ScrollView>
@@ -129,6 +129,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 10,
         fontFamily: 'Asap-Regular',
-        paddingVertical:20,
+        paddingVertical: 20,
     },
 })

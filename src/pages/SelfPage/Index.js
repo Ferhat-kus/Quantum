@@ -11,7 +11,7 @@ export default class Index extends Component {
         console.log('NAVİGATİON', navigation)
         return (
             <ImageBackground style={styles.container} source={require('../../assets/background.png')}>
-                <View style={{ paddingBottom: 40 }}>
+                <View style={{ flex:0.5,}}>
                     <Navbar onPress={()=> navigation.navigate('PaymentPlan')}/>
                 </View>
                 <View style={styles.librariesContainer}>
