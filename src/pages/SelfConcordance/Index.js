@@ -1,31 +1,34 @@
-import { Text, StyleSheet, View, ImageBackground, Image, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, ImageBackground,SafeAreaView } from 'react-native'
 import React, { Component } from 'react'
+
+//Components
 import Navbar from '../../components/Navbar/Index'
-import Dropdown from '../SelfConcordance/components/Dropdown'
 import Button from '../SelfConcordance/components/Button'
+import SelfChoice from './components/SelfChoice'
+import GoBack from '../../components/GoBack/Index'
+import Title from '../../components/Title';
 
 export default class Index extends Component {
   render() {
     const { navigation } = this.props;
     return (
       <ImageBackground style={styles.Container} source={require('../../assets/background.png')}>
-        <Navbar />
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.Goback}>
-          <Image source={require('../../assets/Goback.png')} />
-          <Text style={styles.GobackText}>Menü</Text>
-        </TouchableOpacity>
-        <Text style={styles.Title}>Karakter Uyumu</Text>
-        <View>
-          <View style={{ marginVertical: 20, }}>
-            <Text style={styles.SideTitle}>1. Özbenlik</Text>
-            <Dropdown />
-          </View>
-          <View style={{ marginVertical: 20, }}>
-            <Text style={styles.SideTitle}>2. Özbenlik</Text>
-            <Dropdown />
-          </View>
+        <View style={{ flex: 0.3,justifyContent:'center',}}>
+          <Navbar onPress={() => navigation.navigate('PaymentPlan')} />
         </View>
-        <Button onPress={()=> navigation.navigate('CompatibilityAnalysis')} Title='Uyum Analizi' />
+        <View style={{justifyContent:'center',width:'80%',}}>
+        <GoBack onPress={() => navigation.goBack()} title='MENU' isFlat={true} />
+        </View>
+        <View style={{flex: 0.3,justifyContent:'center',alignItems:'center',}}>
+        <Title Title='Karakter Uyumu' />
+        </View>
+        <View style>
+          <SelfChoice title='1. Özbenlik' />
+          <SelfChoice title='2. Özbenlik' />
+        </View>
+        <View style={{flex: 0.3,justifyContent:'center',alignItems:'center',width:'100%',}}>
+        <Button onPress={() => navigation.navigate('CompatibilityAnalysis')} Title='Uyum Analizi' />
+        </View>
       </ImageBackground>
     )
   }
@@ -35,26 +38,8 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around',
   },
   Title: {
-    fontSize: 30,
-    fontFamily: 'Asap-Bold',
-    color: 'white',
-  },
-  SideTitle: {
-    color: 'white',
-    fontSize: 20,
-    fontFamily: 'Asap-Regular',
-  },
-  Goback: {
-    width: '75%',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  GobackText: {
-    marginLeft: 10,
     fontSize: 30,
     fontFamily: 'Asap-Bold',
     color: 'white',

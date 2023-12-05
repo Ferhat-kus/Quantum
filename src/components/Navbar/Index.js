@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity, Modal, StatusBar } from 'react-native';
 import Button from '../../pages/SelfPage/components/Button';
+import Title from '../../components/Title'
+import PremiumDescription from './components/PremiumDescription'
 export default class Index extends Component {
 
     state = {
@@ -29,10 +31,11 @@ export default class Index extends Component {
                     <TouchableOpacity onPress={this.toggleModal}>
                         <View style={styles.coin}>
                             <Text style={styles.coinText}>1 C</Text>
-                            <Image style={styles.coinIcon} source={require('../../assets/Navbar/coinicon.svg')} />
+                            <Image style={styles.coinIcon} source={require('../../assets/Navbar/coinicon.png')} />
                         </View>
                     </TouchableOpacity>
                 </View>
+
                 {/* modalım */}
                 <Modal visible={modalVisible}>
                     <View style={styles.modalView}>
@@ -45,10 +48,10 @@ export default class Index extends Component {
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.SubscriptionTitleContainer}>
-                                <Text style={styles.SubscriptionTitle}>Abonelik</Text>
+                                <Title Title='Abonelik'/>
                             </View>
                             <View style={styles.SubscriptionIconContainer}>
-                                <Image style={styles.SubscriptionIcon} source={require('../../assets/Navbar/coinicon.svg')} />
+                                <Image style={styles.SubscriptionIcon} source={require('../../assets/Navbar/coinicon.png')} />
                             </View>
                             <View style={styles.SubscriptionMainDescriptionContainer}>
                                 <View style={styles.SubscriptionDescriptionTitleContainer}>
@@ -58,8 +61,7 @@ export default class Index extends Component {
                                 </View>
                                 <View style={styles.SubscriptionDescriptionContainer}>
                                     <Text style={styles.SubscriptionDescription}>
-                                        Eşsiz analiz sonuçlarını ve detayların
-                                        keyfini çıkart
+                                        Eşsiz analiz sonuçlarını ve detayların keyfini çıkart
                                     </Text>
                                 </View>
                             </View>
@@ -69,42 +71,7 @@ export default class Index extends Component {
                         </View>
                         <View style={styles.PremiumContainer}>
                             <Text style={styles.PremiumTitle}>PREMİUM</Text>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </Text>
-                            </View>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor sit
-                                </Text>
-                            </View>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor sit amet
-                                </Text>
-                            </View>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor
-                                </Text>
-                            </View>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor
-                                </Text>
-                            </View>
-                            <View style={styles.PremiumDescriptionContainer}>
-                                <Image source={require('../../assets/SubscriptionPage/tick.png')} />
-                                <Text style={styles.PremiumDescriptionText}>
-                                    Lorem ipsum dolor
-                                </Text>
-                            </View>
+                            <PremiumDescription/>
                         </View>
                     </View>
                 </Modal>
@@ -122,12 +89,6 @@ const styles = StyleSheet.create({
     },
     notificationContainer: {
         justifyContent: 'center',
-    },
-    notifications: {
-        // Add any additional styles for notifications container
-    },
-    logo: {
-        // Add any additional styles for logo container
     },
     coinContainer: {
         width: '15%',
@@ -243,15 +204,5 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Bold',
         marginVertical: 20,
     },
-    PremiumDescriptionContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingHorizontal: 25,
-    },
-    PremiumDescriptionText: {
-        color: 'white',
-        fontSize: 13,
-        fontFamily: 'Poppins-Medium',
-        marginLeft: 10,
-    },
+    
 });

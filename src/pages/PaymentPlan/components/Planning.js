@@ -37,12 +37,22 @@ class PlanExample extends Component {
 
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={[styles.PalnningContainer, { opacity: isPlan1Pressed ? 1 : 0.5 }]} onPress={this.handlePlan1Press}>
+        <TouchableOpacity
+         style={[styles.PalnningContainer, { opacity: isPlan1Pressed ? 1 : 0.5 }]}
+          onPress={this.handlePlan1Press}
+          >
           <View style={styles.bgColor} />
-          <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', alignItems: 'center' }}>
+          <View 
+          style={{ 
+            flexDirection: 'row', 
+            justifyContent: 'space-evenly', 
+            width: '100%', 
+            alignItems: 'center' 
+            }}
+            >
             <Image source={imageSource} />
             <Text style={styles.Text}>Yıllık 500₺ (31,66₺)</Text>
-            <View style={{ width: 2, backgroundColor: 'white', height: 40 }} />
+            <View style={{width: 2, backgroundColor: 'white', height: 40 }} />
             <Text style={styles.Text}>İndirim</Text>
           </View>
         </TouchableOpacity>

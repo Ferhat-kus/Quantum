@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
 import {
   View,
-  Image,
+  Text,
+  ImageBackground,
   StatusBar,
   FlatList,
-  Animated,
   StyleSheet,
   TouchableOpacity,
   Dimensions
 } from 'react-native';
 
-import { Images } from './Constants';
-
+import { Images } from './data';
+import Data from './data';
 // Ekran genişliğini al
 const { width } = Dimensions.get('window');
 
 // Her bir öğe için sabit boyut
-const ITEM_SIZE = width * 0.43;
+const ITEM_SIZE = width * 0.35;
 
 // Öğeler arasındaki boşluk
 const SPACING = 5;
 
 export default class App extends Component {
-  // Constructor, sınıfın başlatılmasını ve state yönetimini sağlar
-  constructor(props) {
-    super(props);
-
-    // Animasyon değerini oluştur
-    this.scrollX = new Animated.Value(0);
-  }
 
   // Render fonksiyonu, bileşenin görüntüsünü oluşturur
   render() {
-    // Kütüphanedeki resimleri içeren dizi
-    const LibraryImages = [
-      { key: 'left-spacer' },
-      ...Images,
-      { key: 'right-spacer' },
-    ];
-
-    // Ana bileşenin JSX yapısı
     return (
       <View style={styles.container}>
         {/* Ekranın üst kısmındaki durum çubuğunu gizle */}
@@ -48,19 +33,11 @@ export default class App extends Component {
         {/* Resimleri yatay olarak gösteren FlatList */}
         <FlatList
           horizontal // Yatay yönde sıralama
-          data={LibraryImages} // Gösterilecek veri dizisi
+          data={Data} // Gösterilecek veri dizisi
           showsHorizontalScrollIndicator={false} // Yatay kaydırma çubuğunu gizle
           snapToInterval={ITEM_SIZE} // Scroll edildiğinde hedef konumları belirle
-          bounces={false} // Ekranın kenarına ulaşıldığında sıçramayı devre dışı bırak
-          scrollEventThrottle={16} // Scroll olaylarını 60 FPS hızında tetikle
           contentContainerStyle={{ alignItems: 'center' }} // İçerik konteynerinin stilini ayarla
-          keyExtractor={(item, index) => `${index}`} // Her öğe için benzersiz bir anahtar üret
           renderItem={({ item, index }) => {
-            // İlk ve son öğeler boşluk
-            if (index === 0 || index === LibraryImages.length - 1) {
-              return <View style={styles.spacerContainer} />;
-            }
-
             // Diğer durumda resmi içeren TouchableOpacity
             return (
               <View key={item.key} style={styles.movieContainer}>
@@ -68,16 +45,13 @@ export default class App extends Component {
                   onPress={this.props.onPress} // Dışarıdan gelen onPress fonksiyonunu çağır
                   style={styles.movieInner}>
                   {/* Resim */}
-                  <Image source={item} style={styles.posterImage} />
+                  <ImageBackground source={item.Images} style={styles.posterImage}>
+                    <Text style={styles.Title}>{item.Title}</Text>
+                  </ImageBackground>
                 </TouchableOpacity>
               </View>
             );
-          }}
-          onScroll={Animated.event(
-            // Scroll olayını dinle
-            [{ nativeEvent: { contentOffset: { x: this.scrollX } } }],
-            { useNativeDriver: false }
-          )}
+          }} 
         />
 
       </View>
@@ -87,7 +61,9 @@ export default class App extends Component {
 
 // Stil tanımlamaları
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    height: '80%',
+  },
   movieContainer: {
     width: ITEM_SIZE,
   },
@@ -96,17 +72,23 @@ const styles = StyleSheet.create({
     marginHorizontal: SPACING,
     padding: SPACING * 0.5,
     backgroundColor: 'white',
-    borderRadius: 24,
+    borderRadius: 22,
   },
   posterImage: {
     width: '100%',
     height: ITEM_SIZE * 0.9,
     resizeMode: 'cover',
-    borderRadius: 24,
-    margin: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  Title: {
+    fontSize:20,
+    fontFamily:'Roboto-Bold',
+    color: 'white',
+    textAlign:'center',
   },
   spacerContainer: {
-    height: 200,
-    // width: width - ITEM_SIZE / 2,
+    height: 100,
+    // width: width - ITEM_SIZE / 0.46,
   },
 });
