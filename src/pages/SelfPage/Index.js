@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, ImageBackground } from 'react-native';
+import { Text, StyleSheet, View, ImageBackground,SafeAreaView } from 'react-native';
 import Navbar from '../../components/Navbar/Index';
 import Flatlist from '../../components/Flatlist/Flatlist';
 import Carousel from './components/Carousel/Carousel'
@@ -11,15 +11,15 @@ export default class Index extends Component {
         console.log('NAVİGATİON', navigation)
         return (
             <ImageBackground style={styles.container} source={require('../../assets/background.png')}>
-                <View style={{ flex:0.5,}}>
+                <SafeAreaView style={{ flex:0.5,paddingTop:'2%',}}>
                     <Navbar onPress={()=> navigation.navigate('PaymentPlan')}/>
-                </View>
+                </SafeAreaView>
                 <View style={styles.librariesContainer}>
                     <Text style={styles.title}>Kütüphaneler</Text>
                         <Carousel onPress={()=> navigation.navigate('SelfConcordance')}/>
                 </View>
                 <View style={styles.flatlistContainer}>
-                    <Text style={styles.title}>Kaydedilenler</Text>
+                    <Text style={styles.Savetitle}>Kaydedilenler</Text>
                     <Flatlist />
                 </View>
             </ImageBackground>
@@ -39,10 +39,14 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontFamily: 'Asap-Bold',
     },
+    Savetitle:{
+        fontSize: 30,
+        color: '#FFF',
+        fontFamily: 'Asap-Bold',
+    },
     librariesContainer: {
-        flex: 1.6,
+        flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
         paddingHorizontal: 25,
     },
     blueBox: {

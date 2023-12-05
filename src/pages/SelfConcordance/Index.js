@@ -26,7 +26,6 @@ export default class Index extends Component {
           </View>
         </View>
         <Button onPress={()=> navigation.navigate('CompatibilityAnalysis')} Title='Uyum Analizi' />
-        <Button Title='Buraya BottomTabsMenu gelicek' />
       </ImageBackground>
     )
   }

@@ -107,6 +107,6 @@ const styles = StyleSheet.create({
   },
   spacerContainer: {
     height: 200,
-    width: width - ITEM_SIZE / 0.55,
+    // width: width - ITEM_SIZE / 2,
   },
 });
