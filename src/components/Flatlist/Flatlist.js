@@ -22,8 +22,8 @@ export default class Flatlist extends Component {
                 <View style={{flexDirection:"row"}}>
                     <View style={styles.ImageContainer}>
                         <Image style={styles.PalnetImage}
-                            // source={{ uri: item.picture }}
-                            source={require('../../assets/planet/Neptune.png')}
+                            source={item.picture}
+                            // source={require('../../assets/planet/Neptune.png')}
                         />
                     </View>
                     <View style={styles.Description}>
