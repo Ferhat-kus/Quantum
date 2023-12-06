@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, ImageBackground,SafeAreaView } from 'react-native';
+import { StyleSheet, View, ImageBackground,SafeAreaView } from 'react-native';
+//COMPONENETS
 import Navbar from '../../components/Navbar/Index';
 import Flatlist from '../../components/Flatlist/Flatlist';
 import Carousel from './components/Carousel/Carousel'

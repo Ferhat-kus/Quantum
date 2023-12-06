@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity, FlatList } from 'react-native';
+//Images
 import Circilebar from '../../../../assets/HarmonyBar/circilebar.png';
 import Bar from '../../../../assets/HarmonyBar/bar.png';
+//DATABASE
 import Data from './data/data'
 
 export default class HarmonyBar extends Component {

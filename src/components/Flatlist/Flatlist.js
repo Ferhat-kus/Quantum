@@ -29,8 +29,6 @@ export default class Flatlist extends Component {
                     <View style={styles.Description}>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginVertical: 15, }}>
                             <Text style={styles.Title}>{item.Title}</Text>
-
-
                             <TouchableOpacity onPress={() => this.handlePress(item._id)}>
                                 <Image
                                     source={isActive ? require('../../assets/Icon/SaveIcon.png') : require('../../assets/Icon/Save.png')}
