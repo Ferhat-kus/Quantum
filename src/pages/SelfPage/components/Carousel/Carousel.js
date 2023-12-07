@@ -30,7 +30,8 @@ export default class App extends Component {
         {/* Ekranın üst kısmındaki durum çubuğunu gizle */}
         <StatusBar hidden />
 
-        {/* Resimleri yatay olarak gösteren FlatList */}
+        {
+        /* Resimleri yatay olarak gösteren FlatList */}
         <FlatList
           horizontal // Yatay yönde sıralama
           data={Data} // Gösterilecek veri dizisi

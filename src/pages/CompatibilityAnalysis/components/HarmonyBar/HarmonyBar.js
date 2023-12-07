@@ -42,8 +42,8 @@ export default class HarmonyBar extends Component {
                     <Text style={[styles.Text, { color: '#ad00ff' }]}>Uyumlu</Text>
                 </View>
                 <FlatList
-                horizontal
-                contentContainerStyle={styles.FlatList}
+                    horizontal
+                    contentContainerStyle={styles.FlatList}
                     data={Data}
                     keyExtractor={(item) => item._id}
                     renderItem={this.renderItem}
@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    FlatList:{
-        width:'100%',
-        justifyContent:'center',
+    FlatList: {
+        width: '100%',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     Title: {

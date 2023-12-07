@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, Image, TouchableOpacity, Modal, StatusBar } from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Button from '../../pages/SelfPage/components/Button';
 import Title from '../../components/Title'
 import PremiumDescription from './components/PremiumDescription'

@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, ImageBackground, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, ImageBackground, ScrollView } from 'react-native'
 import React, { Component } from 'react'
 
 //Components
@@ -24,18 +24,18 @@ export default class Index extends Component {
                                 <GoBack onPress={() => navigation.goBack()} />
                             </View>
                             <View style={styles.TitleContainer}>
-                                <Title Title='Ödeme Planı'/>
+                                <Title Title='Ödeme Planı' />
                             </View>
                             <Planning />
-                            <Line/>
+                            <Line />
                             <Input />
-                            <Line/>
+                            <Line />
                             <View style={{ paddingHorizontal: 20, }}>
                                 <Description Plan='Abonelik Planı' Price='Yıllık / 500₺' />
                                 <Description Plan='İndirim Kuponu' Price='-' />
                                 <Description Plan='TOPLAM' Price='500₺' />
                             </View>
-                            <Line/>
+                            <Line />
                             <Text style={styles.PaymentText}>Paket yenilenme tarihinden en az 24 saat önce iptal et. Uygulamada, Profil - Abonelikler’e git.</Text>
                             <View style={{ alignItems: 'center', paddingVertical: 10, }}>
                                 <Button Title='İleri' onPress={() => navigation.goBack()} />

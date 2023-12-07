@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, ImageBackground, ScrollView, RefreshControl } from 'react-native';
+import { Text, StyleSheet, View, ImageBackground, ScrollView } from 'react-native';
 
 import React, { Component } from 'react';
 //COMPONENTS
